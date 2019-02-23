@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
+import { Component, OnInit, Inject } from '@angular/core';
+import { PostService, Post } from './post-service';
+import { map } from 'rxjs/operators'; 
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +10,11 @@ import { of } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'rxjs-app';
-  list: Array<number> = [1, 2, 3];
+  posts: Observable<Post[]>;
+
+  constructor(private postService: PostService){}
 
   ngOnInit() {
-    const test = of(this.list);
-    test.subscribe(val => console.log("Val: " + val));
+    this.posts = this.postService.getPosts();
   }
 }

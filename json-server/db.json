@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "1st",
+      "author": "Captain Marvel"
+    },
+    {
+      "id": 2,
+      "title": "2nd",
+      "author": "Avengerers"
+    },
+    {
+      "id": 3,
+      "title": "3rd",
+      "author": "Guardians"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
